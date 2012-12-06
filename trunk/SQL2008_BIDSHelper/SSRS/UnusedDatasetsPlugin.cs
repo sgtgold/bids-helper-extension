@@ -149,20 +149,7 @@ namespace BIDSHelper.SSRS
 
         public override void Exec()
         {
-            try
-            {
-                TestWpf.MainWindow win = new TestWpf.MainWindow();
-                win.ShowDialog();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
-
-
-            //ScanReports(true);
+           ScanReports(true);
         }
 
         protected void ScanReports(bool LookForUnusedDatasets)
