@@ -1,0 +1,8 @@
+﻿<Window x:Class="TestWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="400" Left="Auto" Top="Auto">
+    <StackPanel VerticalAlignment="Top">
+        <Button Width="200" Height="100" >Ahoj </Button>
+    </StackPanel>
+</Window>
