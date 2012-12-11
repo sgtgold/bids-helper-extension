@@ -114,9 +114,8 @@
       <HintPath>$(ProgramFiles)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\Microsoft.AnalysisServices.Design.DLL</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.AnalysisServices.Project, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <Private>False</Private>
+    <Reference Include="Microsoft.AnalysisServices.Project">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\Microsoft.AnalysisServices.Project.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.DataTransformationServices.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
@@ -127,9 +126,8 @@
       <HintPath>$(ProgramFiles)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\Microsoft.DataTransformationServices.Design.DLL</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.DataTransformationServices.VsIntegration, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>True</SpecificVersion>
-      <Private>False</Private>
+    <Reference Include="Microsoft.DataTransformationServices.VsIntegration">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\Microsoft.DataTransformationServices.VsIntegration.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.DataWarehouse, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
@@ -164,7 +162,6 @@
     <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualStudio.Shell, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>I:\GAC_MSIL\Microsoft.VisualStudio.Shell\2.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualStudio.Shell.dll</HintPath>
@@ -629,6 +626,7 @@
     <None Include="DLLs\Biml\Antlr3.Runtime.dll" />
     <None Include="DLLs\Biml\BimlEngine.dll" />
     <None Include="Resources\NoIcon.ico" />
+    <Content Include="DLLs\Biml\PostSharp.dll" />
     <Content Include="Resources\2005\DataFlow.ico" />
     <Content Include="Resources\2005\DestinationComponent.ico" />
     <Content Include="Resources\2005\EditVariable.ico" />
@@ -879,7 +877,8 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\fryjacek\Documents\Visual Studio 2008\Addins\"</PostBuildEvent>
+    <PostBuildEvent>rem copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\fryjacek\Documents\Visual Studio 2008\Addins\"
+copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\Filip\Documents\Visual Studio 2008\Addins\"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Build\examples\" />
