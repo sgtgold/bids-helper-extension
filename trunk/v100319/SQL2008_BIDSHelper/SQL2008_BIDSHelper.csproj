@@ -177,6 +177,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>DLLs\Biml\PostSharp.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -219,6 +221,7 @@
     <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -555,6 +558,13 @@
       <DependentUpon>SmartDiff.cs</DependentUpon>
     </Compile>
     <Compile Include="SSIS\SmartDiffPlugin.cs" />
+    <Compile Include="SSRS\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSRS\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSRS\ReportParametersPlugin.cs" />
     <Compile Include="SSRS\DeleteDatasetCachePlugin.cs" />
     <Compile Include="SSRS\ExpressionInfo.cs" />
     <Compile Include="SSRS\UnusedDatasetsPlugin.cs" />
@@ -825,6 +835,9 @@
       <DependentUpon>VariablesMove.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SSRS\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SSRS\UsedDatasets.rdlc" />
     <EmbeddedResource Include="SSRS\UnusedDatasets.rdlc" />
   </ItemGroup>
@@ -866,8 +879,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\fryjacek\Documents\Visual Studio 2008\Addins\"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Build\examples\" />
@@ -888,5 +900,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SSRS\ReportParametersUI\ReportParametersUI.csproj">
+      <Project>{5AD0CDEA-25B7-4CB8-A958-D36366A23E02}</Project>
+      <Name>ReportParametersUI</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
