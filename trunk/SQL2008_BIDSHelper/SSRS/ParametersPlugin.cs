@@ -39,7 +39,7 @@ namespace BIDSHelper.SSRS
 
         public override string MenuName
         {
-            get { return "Project,Solution,File"; }
+            get { return "File"; }
         }
 
         public override bool ShouldPositionAtEnd
@@ -53,7 +53,7 @@ namespace BIDSHelper.SSRS
         /// <value>The friendly name.</value>
         public override string FeatureName
         {
-            get { return "Unused Report Datasets"; }
+            get { return "xxx"; }
         }
 
         /// <summary>
@@ -62,7 +62,10 @@ namespace BIDSHelper.SSRS
         /// <value>The help page Url.</value>
         public override string  HelpUrl
         {
-	        get { return this.GetCodePlexHelpUrl("Dataset Usage Reports"); }
+	        get { 
+                 return string.Empty;
+                //return this.GetCodePlexHelpUrl("Dataset Usage Reports");
+            }
         }
 
         /// <summary>
@@ -85,6 +88,7 @@ namespace BIDSHelper.SSRS
 
         /// <summary>
         /// Determines if the command should be displayed or not.
+        /// Command is diplayed on RDL file only.
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
