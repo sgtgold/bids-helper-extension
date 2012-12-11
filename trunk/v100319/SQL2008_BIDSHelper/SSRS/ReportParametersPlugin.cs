@@ -112,26 +112,24 @@ namespace BIDSHelper.SSRS
         {
             try
             {
-
             UIHierarchy solExplorer = this.ApplicationObject.ToolWindows.SolutionExplorer;
             UIHierarchyItem hierItem = (UIHierarchyItem)((System.Array)solExplorer.SelectedItems).GetValue(0);
             ProjectItem projItem = (ProjectItem)hierItem.Object;
 
             string sFileName = ((ProjectItem)hierItem.Object).Name.ToLower();
-
-            MessageBox.Show(sFileName);
             
             if (this.ApplicationObject.ActiveDocument != null)
             {
-                Form1 f = new Form1();
-                f.propertyGrid1.SelectedObject = this.ApplicationObject.ActiveDocument;
-                f.ShowDialog();
+                //this.ApplicationObject.ActiveDocument;
+                //this.ApplicationObject.ActiveDocument.FullName        cesta k souboru
+                //this.ApplicationObject.ActiveDocument.Saved           false když není uložený
             }
-            else
-                MessageBox.Show("ActiveDocument IS NULL");
 
-            //ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
-            //w.ShowDialog();
+            ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
+
+            MessageBox.Show("instance hotova");
+
+            w.ShowDialog();
 
             }
             catch (Exception ex)
