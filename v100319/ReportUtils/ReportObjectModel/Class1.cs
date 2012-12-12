@@ -3,8 +3,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.ReportingServices.RdlObjectModel;
-using Microsoft.ReportingServices.RdlObjectModel.Serialization;
+//using Microsoft.ReportingServices.RdlObjectModel;
+//using Microsoft.ReportingServices.RdlObjectModel.Serialization;
 
 namespace ReportObjectModel
 {
@@ -12,8 +12,8 @@ namespace ReportObjectModel
     {
         static void Main()
         {
-            string idef = @"C:\Reports\Sales by Product.rdl"; // input report in RDL 2008 format
-            string odef = @"C:\Reports\Sales by Product1.rdl"; // output report in RDL 2008 format
+            //string idef = @"C:\Reports\Sales by Product.rdl"; // input report in RDL 2008 format
+            //string odef = @"C:\Reports\Sales by Product1.rdl"; // output report in RDL 2008 format
 
             //Report report = null;
             //RdlSerializer serializer;
