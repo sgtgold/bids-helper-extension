@@ -1,0 +1,24 @@
+﻿<Window x:Class="ReportsComparer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Window.Resources>
+        <XmlNamespaceMappingCollection x:Key="rdlNamespaceMapping">
+            <XmlNamespaceMapping Uri="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition" Prefix="rdl" ></XmlNamespaceMapping>
+        </XmlNamespaceMappingCollection>
+
+        <XmlDataProvider x:Key="reportProvider" Source="TestReport1.rdl"  XPath="/rdl:Report" XmlNamespaceManager="{StaticResource rdlNamespaceMapping}" DataChanged="XmlDataProvider_DataChanged" />
+
+
+    </Window.Resources>
+    
+    <StackPanel>
+        <ListBox Name="lstDataSets" Margin="5" DisplayMemberPath="@Name" ItemsSource="{Binding Source={StaticResource reportProvider}, XPath=rdl:DataSets/rdl:DataSet}" ></ListBox>
+        <ListBox Name="lstParameters" Margin="5" DisplayMemberPath="@Name" ItemsSource="{Binding Source={StaticResource reportProvider}, XPath=rdl:ReportParameters/rdl:ReportParameter}" ></ListBox>
+
+        <!--<TreeView ItemsSource="{Binding Source={StaticResource reportProvider}, XPath=rdl:ReportParameters}"></TreeView>-->
+
+    </StackPanel>
+        
+</Window>
