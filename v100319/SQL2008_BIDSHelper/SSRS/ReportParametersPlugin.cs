@@ -34,7 +34,7 @@ namespace BIDSHelper.SSRS
 
         public override string ToolTip
         {
-            get { return "my Tooltip"; } //not used anywhere
+            get { return ""; } //not used anywhere
         }
 
         public override bool ShouldPositionAtEnd
@@ -48,7 +48,7 @@ namespace BIDSHelper.SSRS
         /// <value>The friendly name.</value>
         public override string FeatureName
         {
-            get { return "Unused Report Datasets"; }
+            get { return "Report Parameters Details..."; }
         }
 
         /// <summary>
@@ -123,18 +123,35 @@ namespace BIDSHelper.SSRS
                 //this.ApplicationObject.ActiveDocument;
                 //this.ApplicationObject.ActiveDocument.FullName        cesta k souboru
                 //this.ApplicationObject.ActiveDocument.Saved           false když není uložený
+
+                OpenParameterEditor(this.ApplicationObject.ActiveDocument.FullName);
             }
-
-            ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
-
-            MessageBox.Show("instance hotova");
-
-            w.ShowDialog();
-
+           
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void OpenParameterEditor(string fullName)
+        {
+            //ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
+            //w.Title = fullName;
+            //w.ShowDialog();
+
+
+            //now run the main code to parse the RDL
+            XmlDocument doc = new XmlDocument();
+            doc.Load(fullName);
+
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);
+            nsmgr.AddNamespace("rs", doc.DocumentElement.NamespaceURI);
+
+            //build list of all DataSets in report
+            foreach (XmlNode nodeDataSet in doc.SelectNodes("/rs:Report/rs:DataSets/rs:DataSet", nsmgr))
+            {
+                MessageBox.Show(nodeDataSet.InnerXml.ToString());
             }
         }
 

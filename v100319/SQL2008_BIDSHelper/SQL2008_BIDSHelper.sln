@@ -2,9 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL2008_BIDSHelper", "SQL2008_BIDSHelper.csproj", "{D0A64DAC-84C6-4F6A-A406-A08355738A45}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5AD0CDEA-25B7-4CB8-A958-D36366A23E02} = {5AD0CDEA-25B7-4CB8-A958-D36366A23E02}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportParametersUI", "SSRS\ReportParametersUI\ReportParametersUI.csproj", "{5AD0CDEA-25B7-4CB8-A958-D36366A23E02}"
 EndProject
