@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Interop;
 
 namespace BIDSHelper.SSRS
 {
@@ -136,11 +137,20 @@ namespace BIDSHelper.SSRS
 
         private void OpenParameterEditor(string fullName)
         {
+            ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
+            WindowInteropHelper wih = new WindowInteropHelper(w);
+            wih.Owner = (IntPtr)this.ApplicationObject.MainWindow.HWnd;
+
+            w.Title = fullName;
+            w.ShowDialog();
+            
+
+
             //ReportParametersUI.MainWindow w = new ReportParametersUI.MainWindow();
             //w.Title = fullName;
             //w.ShowDialog();
 
-
+            /*
             //now run the main code to parse the RDL
             XmlDocument doc = new XmlDocument();
             doc.Load(fullName);
@@ -153,6 +163,7 @@ namespace BIDSHelper.SSRS
             {
                 MessageBox.Show(nodeDataSet.InnerXml.ToString());
             }
+            */
         }
 
     }
