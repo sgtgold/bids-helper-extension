@@ -873,7 +873,7 @@
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>rem copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\fryjacek\Documents\Visual Studio 2008\Addins\"
+    <PostBuildEvent>copy /Y "$(TargetDir)BIDSHelper.*" "c:\Users\fryjacek\Documents\Visual Studio 2008\Addins\"
 copy /Y "$(TargetDir)*.*" "c:\Users\Filip\Documents\Visual Studio 2008\Addins\"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
