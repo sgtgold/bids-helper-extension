@@ -1,0 +1,1 @@
+Add new report dialogs in WPF showing details about report
